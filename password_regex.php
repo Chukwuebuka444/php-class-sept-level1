@@ -53,3 +53,26 @@ function wordCensor(){
     }
 }
 wordCensor();
+$hobbies = [];
+function adder($new_hobbies){
+global $hobbies;
+array_push($hobbies,$new_hobbies);
+};
+adder("hacking");
+adder("Reading");
+adder("Swiming");
+adder("Spending");
+function removeHobbie($idx)
+{
+    global $hobbies;
+    array_splice($hobbies, $idx, 1);
+}
+function editHobbie($idx, $newVal)
+{
+    global $hobbies;
+    $hobbies[$idx] = $newVal;
+}
+unset($hobbies[1]); //removes the element on an index and its index number(does not reduce the last index of the original array,but reduces the length)
+editHobbie(2, "Sleep");
+// removeHobbie(1);
+print_r($hobbies);
